@@ -211,7 +211,7 @@ class Env:
         #                                     1 / 2)), t, t + self.ts)
         err = ((cur_x + v[0][0] * self.ts - 1 - 0.9 * (t + self.ts)) ** 2 + \
                (cur_y + v[1][0] * self.ts - 1 - 0.9 * (t + self.ts)) ** 2)
-        r1 = -tanh(err - 0.4) * 15
+        r1 = -tanh(pow(err, 2) - 0.4) * 15
         d_safe = sqrt(pow(n_x - self.xo, 2) + pow(n_y - self.yo, 2))
         r3 = 0
         r2 = 0
